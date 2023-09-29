@@ -1,0 +1,60 @@
+#header {
+
+ text-align: center;
+ width: 90%;
+ border-style: solid;
+ margin-bottom: 2%;
+ margin-left: 5%;
+
+}
+
+#main-header-container {
+    width: 95%;
+    margin-left: 2.5%;
+    border-style: solid;
+
+}
+
+#bytopic {
+
+    
+    text-align: center;
+    width: 85%;
+    border-style: solid;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+
+}
+
+.footer {
+
+    margin-top: 10%;
+    width: 95%;
+    margin-left: 2.5%;
+    border-style: solid;
+}
+
+#aside {
+    display: flex;
+    width: 30%;
+    margin-left: 5%;
+    border-style: solid;
+}
+
+#content-container {
+
+    display: flex;
+
+}
+
+#main-content {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 3;
+    width: 150%;
+    /* padding-left: 5%; */
+
+
+}
+

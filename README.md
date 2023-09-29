@@ -1,1 +1,1 @@
-# project-01-socially-awkward
+# socially-awkward

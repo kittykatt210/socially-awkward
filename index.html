@@ -16,8 +16,7 @@
 </head>
 <body>
 
-
-    
+    <!-- main page header -->
    <div id="main-header-container" class="block has-background-grey-light mt-6">
     <div id="header" class=" block has-background-grey-light p-6 has-text-black is-size-4 mt-4 	" >
         <p> Welcome to our ice breaker!!!! <br>
@@ -26,20 +25,23 @@
       </div>
     </div>
     
+<!-- Main page content, decided to divide it in 2 main child containers in order to reach desired layout -->
+    <main id="content-container" >
 
-    <main id="content-container">
-    <aside id= "aside" class="menu has-background-grey-light">
+        <!-- aside -->
+    <aside id= "aside" class="menu has-background-grey-light is-flex-direction-column is-justify-content-space-evenly is-align-items-center">
         <p class="menu-label has-text-black">
-          General
+            <i class="fa-solid fa-star" style="color: #0a3785;"></i>  Favorites
         </p>
       </aside>
-     <div id="main-content">
-    <div id="bytopic" class=" block has-background-grey-light pb-3 pt-6 has-text-black is-size-4 is-flex-direction-column" >
+<!-- main content, which has 2 child boxes, that are used for the main porpuse of the page -->
+     <div id="main-content" >
+    <div id="bytopic" class=" block has-background-grey-light pb-3 pt-6 has-text-black is-size-4 is-flex-direction-column " >
          <p>hit start to search for Jokes / Random facts by topic</p> 
         <button id="start" class="m-4 px-6 py-1 mt-4">start</button>
       </div>
 
-      <div id="bytopic" class=" block has-background-grey-light pb-3 pt-6 has-text-black is-size-4 is-flex-direction-column	" >
+      <div id="bytopic" class=" block has-background-grey-light pb-3 pt-6 has-text-black is-size-4 is-flex-direction-column " >
         <p>Feel confident enough but want to try something fun?</p> 
         <p>click here to get a Random fact / joke</p>
        <button id="start-random" class="m-4 px-6 py-1 mt-4" ><i class="fa-solid fa-skull"></i>  let's go !!</button>
@@ -47,7 +49,7 @@
     </div>
     </main>
 
-
+<!-- footer -->
 
      <footer class="footer has-background-grey-light has-text-black is-size-5 mb-3">
         <div class="content has-text-centered is-flex is-flex-direction-row	is-justify-content-space-evenly">

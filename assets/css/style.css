@@ -1,4 +1,6 @@
-#header {
+ /* this code provides styling for the header of the page */
+ 
+ #header {
 
  text-align: center;
  width: 90%;
@@ -15,6 +17,8 @@
 
 }
 
+/* applies space styling to the main containers */
+
 #bytopic {
 
     
@@ -27,14 +31,8 @@
 
 }
 
-.footer {
 
-    margin-top: 10%;
-    width: 95%;
-    margin-left: 2.5%;
-    border-style: solid;
-}
-
+/* provides basic positioning and styling for the aside box */
 #aside {
     display: flex;
     width: 30%;
@@ -48,13 +46,39 @@
 
 }
 
+
+/* the following code allows the aside and the main containers to cover the entire screen width and behave properly with flexbox */
 #main-content {
    display: flex;
    flex-direction: column;
    flex-grow: 3;
     width: 150%;
-    /* padding-left: 5%; */
-
 
 }
 
+.footer {
+
+    margin-top: 10%;
+    width: 95%;
+    margin-left: 2.5%;
+    border-style: solid;
+}
+
+/* finally decided to use a media query, tried multiple ways to make the adjustments but, in order to keep the previous work done, this was the best approach possible */
+
+ 
+    @media screen and (max-width: 1023px) {
+        #content-container {
+            flex-wrap: wrap;
+        }
+
+        #aside {
+
+            padding: 2% 45%;
+        }
+
+        #bytopic {
+
+            margin-left: 8%;
+        }
+    }

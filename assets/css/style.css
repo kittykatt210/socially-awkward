@@ -82,3 +82,33 @@
             margin-left: 8%;
         }
     }
+
+    /* setup for the fav html */
+
+    #fav-header {
+
+        width: 80%;
+        height: 60%;
+    }
+
+    #jokesfav {
+        margin-left:30%;
+        height: fit-content;
+    }
+
+    #favjokes {
+        
+        margin-left: 35%;
+    }
+
+    #clear-jokes-tab {
+
+        height: fit-content;
+        margin-left: 20%;
+
+    }
+
+    #buttons-close {
+
+        width: 55%;
+    }

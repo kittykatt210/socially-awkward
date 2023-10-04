@@ -114,12 +114,19 @@
    #randomFact, #historicalFact {
     text-align: justify;
    }
+    
+
+   #randomFact li {
+
+    margin-top: 2rem;
+   }
+
 
    @media screen and (max-width: 769px){
 
     #generateHistorical, #generateFacts {
 
-        margin-top: 10%;
+        margin-top: 8%;
        }
    
 

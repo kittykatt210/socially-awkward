@@ -1,5 +1,9 @@
 var generateFactsBt = document.getElementById('generateFacts');
 var generateHistoricalBt = document.getElementById('generateHistorical');
+var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
+function SaveTolocalStorage () {
+    localStorage.setItem("random-fact(s): ", JSON.stringify(RandomLocalStorage));
+}
 
 function getFacts() {
     // Facts api call
@@ -17,11 +21,21 @@ function getFacts() {
             for(var i = 0; i < limit; i++) {
                 var factList = document.getElementById('randomFact');
                 var factItem = document.createElement('li');
-                var num = i+1;
+                var factIcon = document.createElement("i")
+                factIcon.classList.add("fa", "fa-solid", "fa-gears");
 
-                var fact = num + ". " + result[i].fact;
-                factItem.appendChild(document.createTextNode(fact));
+                var factText = document.createTextNode(result[i].fact);
+
+                factItem.appendChild(factIcon);
+                factItem.appendChild(document.createTextNode(". "));
+                factItem.appendChild(factText);
                 factList.appendChild(factItem);
+
+                factIcon.addEventListener("click", function () {
+                    var index = Array.from(factList.children).indexOf(this.parentElement)
+                   RandomLocalStorage.push(result[index].fact) 
+                   SaveTolocalStorage ();
+                } )
             }
 
         },
@@ -86,6 +100,7 @@ function getDadJokes() {
         }
     });
 }
+
 
 generateFactsBt.addEventListener('click', getFacts);
 generateHistoricalBt.addEventListener('click', getHistFacts);

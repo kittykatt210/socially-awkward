@@ -2,7 +2,7 @@ var generateFactsBt = document.getElementById('generateFacts');
 var generateHistoricalBt = document.getElementById('generateHistorical');
 var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
 function SaveTolocalStorage () {
-    localStorage.setItem("random-fact(s): ", JSON.stringify(RandomLocalStorage));
+    localStorage.setItem("random-fact(s):", JSON.stringify(RandomLocalStorage));
 }
 
 function getFacts() {
@@ -37,15 +37,40 @@ function getFacts() {
                    SaveTolocalStorage ();
                 } )
             }
-
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
-
-
     });
 }
+
+function displayRandomFactsFromLocalStorage() {
+    var factList = document.getElementById('randomFact');
+    factList.innerHTML = ''; // Clear any existing content
+
+    var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
+
+    RandomLocalStorage.forEach(function (factText) {
+        var factItem = document.createElement('li');
+        var factIcon = document.createElement("i")
+        factIcon.classList.add("fa", "fa-solid", "fa-gears");
+
+        var factTextNode = document.createTextNode(". " + factText);
+
+        factItem.appendChild(factIcon);
+        factItem.appendChild(factTextNode);
+        factList.appendChild(factItem);
+    });
+}
+
+// Call the function to display facts from local storage when needed
+document.addEventListener("DOMContentLoaded", function () {
+    displayRandomFactsFromLocalStorage();
+    console.log("Page loaded.");
+});
+
+
+
 
 function getHistFacts() {
     // Historical facts api call

@@ -67,7 +67,7 @@
 /* finally decided to use a media query, tried multiple ways to make the adjustments but, in order to keep the previous work done, this was the best approach possible */
 
  
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 769px) {
         #content-container {
             flex-wrap: wrap;
         }
@@ -81,6 +81,11 @@
 
             margin-left: 8%;
         }
+
+      .aside-fav-jokes, .aside-fav-facts {
+
+        width: 10rem;
+      }
     }
     
     /* set up the facts layout ---------------------------------------------------------------------------------------------------------------------- */

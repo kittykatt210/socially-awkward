@@ -1,5 +1,9 @@
 var generateFactsBt = document.getElementById('generateFacts');
 var generateHistoricalBt = document.getElementById('generateHistorical');
+var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
+function SaveTolocalStorage () {
+    localStorage.setItem("random-fact(s):", JSON.stringify(RandomLocalStorage));
+}
 
 function getFacts() {
     // Facts api call
@@ -17,22 +21,64 @@ function getFacts() {
             for(var i = 0; i < limit; i++) {
                 var factList = document.getElementById('randomFact');
                 var factItem = document.createElement('li');
+
+                var factIcon = document.createElement("i")
+                factIcon.classList.add("fa", "fa-solid", "fa-gears");
+
+                var factText = document.createTextNode(result[i].fact);
+
+                factItem.appendChild(factIcon);
+                factItem.appendChild(document.createTextNode(". "));
+                factItem.appendChild(factText);
+
                 var num = i+1;
                 var fact = num + ". " + result[i].fact;
 
                 console.log(limit);
                 factItem.appendChild(document.createTextNode(fact));
-                factList.appendChild(factItem);
-            }
 
+                factList.appendChild(factItem);
+
+                factIcon.addEventListener("click", function () {
+                    var index = Array.from(factList.children).indexOf(this.parentElement)
+                   RandomLocalStorage.push(result[index].fact) 
+                   SaveTolocalStorage ();
+                } )
+            }
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
-
-
     });
 }
+
+function displayRandomFactsFromLocalStorage() {
+    var factList = document.getElementById('randomFact');
+    factList.innerHTML = ''; // Clear any existing content
+
+    var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
+
+    RandomLocalStorage.forEach(function (factText) {
+        var factItem = document.createElement('li');
+        var factIcon = document.createElement("i")
+        factIcon.classList.add("fa", "fa-solid", "fa-gears");
+
+        var factTextNode = document.createTextNode(". " + factText);
+
+        factItem.appendChild(factIcon);
+        factItem.appendChild(factTextNode);
+        factList.appendChild(factItem);
+    });
+}
+
+// Call the function to display facts from local storage when needed
+document.addEventListener("DOMContentLoaded", function () {
+    displayRandomFactsFromLocalStorage();
+    console.log("Page loaded.");
+});
+
+
+
 
 function getHistFacts() {
     // Historical facts api call
@@ -113,6 +159,7 @@ function getDadJokes() {
         }
     });
 }
+
 
 generateFactsBt.addEventListener('click', getFacts);
 generateHistoricalBt.addEventListener('click', getHistFacts);

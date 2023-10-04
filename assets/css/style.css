@@ -10,6 +10,7 @@
 
 }
 
+
 #main-header-container {
     width: 95%;
     margin-left: 2.5%;
@@ -89,6 +90,22 @@
     }
     
     /* set up the facts layout ---------------------------------------------------------------------------------------------------------------------- */
+
+    .fa-gears:hover {
+  
+        box-shadow: 0px 5px 20px black;
+
+    }
+
+    #holder {
+
+        box-shadow: 0px 20px 40px black;
+    }
+
+    html {
+
+        background-color: #FFA526;
+    }
    
     #generatee {
 
@@ -114,12 +131,19 @@
    #randomFact, #historicalFact {
     text-align: justify;
    }
+    
+
+   #randomFact li {
+
+    margin-top: 2rem;
+   }
+
 
    @media screen and (max-width: 769px){
 
     #generateHistorical, #generateFacts {
 
-        margin-top: 10%;
+        margin-top: 8%;
        }
    
 

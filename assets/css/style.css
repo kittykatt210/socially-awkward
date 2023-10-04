@@ -95,19 +95,24 @@
     width: 100px ;
    }
 
+   #generateHistorical, #generateFacts {
+
+    margin-top: 6%;
+   }
+   
+
+   .control {
+
+    margin-top: 4%;
+   }
 
    @media screen and (max-width: 769px){
 
-    #generate {
+    #generateHistorical, #generateFacts {
 
-        position: absolute;
-        visibility: hidden;
-    }
-
-    #generatee {
-
-        display: block;
-    }
+        margin-top: 10%;
+       }
+   
 
       .control {
         display: flex;
@@ -115,3 +120,21 @@
       }
     
    } 
+
+
+   /* make mandatory changes to the jokes.HTML */
+
+   #generateRandomJokes, #generateDadjokes {
+
+    margin-top: 6%;
+
+   }
+
+   @media screen and (max-width: 769px){
+
+    #generateRandomJokes, #generateDadjokes {
+
+        margin-top: 10%;
+    
+       }
+   }

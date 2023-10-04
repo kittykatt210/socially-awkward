@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socially awkward</title>
+    <title>Socially awkward Facts</title>
 
     
 
@@ -24,41 +24,40 @@
                     <div class="column">
                         <h1 class="title my-6">Random Facts</h1>
                         <ul>
-                            <li class="my-3">Fact 1</li>
-                            <li class="my-3">Fact 2</li>
-                            <li class="my-3">Fact 3</li>
+                            <li class="my-3"><i class="fa-solid fa-gears"></i> Fact 1</li>
+                            <li class="my-3"><i class="fa-solid fa-gears"></i> Fact 2</li>
+                            <li class="my-3"><i class="fa-solid fa-gears"></i> Fact 3</li>
                         </ul>
 
-                        <input type="number" min= "0" max="8" step=""1 class="form-control mt-6" id="amountInput" placeholder="how many? ">
+                        <input type="number" min= "0" max="5" step=""1 class="form-control mt-6" id="amountInput" placeholder="how many? "> 
+                        <button id="generateFacts" class="button is-primary ml-4">Generate</button>
 
+ 
                     </div>
-                    <button  id= "generate" class="button is-primary mt-6 is-flex is-align-self-center">Generate</button>
-
+                    
                     <div class="column">
                         <h2 class="title my-6">Historical Facts</h2>
                         <ul>
-                            <li class="my-3">Fact 4</li>
-                            <li class="my-3">Fact 5</li>
-                            <li class="my-3">Fact 6</li>
+                            <li class="my-3"><i class="fa-regular fa-calendar"></i> Fact 4</li>
+                            <li class="my-3"><i class="fa-regular fa-calendar"></i> Fact 5</li>
+                            <li class="my-3"><i class="fa-regular fa-calendar"></i> Fact 6</li>
                         </ul>
-                        <input type="number" min= "0" max="8" step=""1 class="form-control mt-6" id="amountInput" placeholder="how many? ">
+                        <input type="number" min="0" max="" step="1" class="form-control mt-6" id="amountInput" placeholder="how many?">
                         <input type="date" class="ml-4">
+                        <button id="generateHistorical" class="button is-primary ml-4">Generate</button>
                     </div>
                 </div>
                 <div class="field is-grouped is-grouped-centered ">
                     <p class="control">
-                        <button  id= "generatee" class="button is-primary mx-6 mt-6">Generate</button>
-                        <button  id= "favorites" class="button is-primary mx-6 mt-6 ">Favorites</button>
                         <button  id= "Go-home" class="button is-primary  mx-6 mt-6 ">Go Home</button>
                     </p>
                 </div>
             </div>
             <div id="final-buttons" class=" is-flex is-justify-content-space-evenly	">
-
             </div>
-
         </div>
     </section>
-</body>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

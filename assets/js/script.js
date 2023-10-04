@@ -15,12 +15,13 @@ function getFacts() {
         headers: { 'X-Api-Key': 'r0xgD0GtvJJrEoy6u9/jlg==nkpcvornpjuE0Na7'},
         contentType: 'application/json',
         success: function(result) {
-            console.log(limit);
             document.getElementById('randomFact').innerHTML = '';
+            console.log(result);
 
             for(var i = 0; i < limit; i++) {
                 var factList = document.getElementById('randomFact');
                 var factItem = document.createElement('li');
+
                 var factIcon = document.createElement("i")
                 factIcon.classList.add("fa", "fa-solid", "fa-gears");
 
@@ -29,6 +30,13 @@ function getFacts() {
                 factItem.appendChild(factIcon);
                 factItem.appendChild(document.createTextNode(". "));
                 factItem.appendChild(factText);
+
+                var num = i+1;
+                var fact = num + ". " + result[i].fact;
+
+                console.log(limit);
+                factItem.appendChild(document.createTextNode(fact));
+
                 factList.appendChild(factItem);
 
                 factIcon.addEventListener("click", function () {
@@ -74,15 +82,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getHistFacts() {
     // Historical facts api call
-    var text = 'roman empire'
+    var limit = document.getElementById('amountInput2').value;
+    var date = document.getElementById('date').value;
+    var year = parseInt(date);
+    var month = parseInt(date.split('-')[1]);
+    var day = parseInt(date.split('-')[2]);
 
     $.ajax({
         method: 'GET',
-        url: 'https://api.api-ninjas.com/v1/historicalevents?text=' + text,
+        url: 'https://api.api-ninjas.com/v1/historicalevents?year=' + year + '&month=' + month + '&day=' + day,
         headers: { 'X-Api-Key': 'r0xgD0GtvJJrEoy6u9/jlg==nkpcvornpjuE0Na7'},
         contentType: 'application/json',
         success: function(result) {
+            document.getElementById('historicalFact').innerHTML = '';
+            // console.log(limit);
             console.log(result);
+            // var histFact = result[0].event;
+            if(result.length != 0) { 
+            for(var i = 0; i < limit; i++) {
+                var histList = document.getElementById('historicalFact');
+                var histItem = document.createElement('li');
+                var num = i+1;
+                var histFact = num + '. ' + result[0].event;
+                console.log(histFact);
+
+                histItem.appendChild(document.createTextNode(histFact));
+                histList.appendChild(histItem);
+            }} else {
+                var histList = document.getElementById('historicalFact');
+                var histItem = document.createElement('li');
+                histFact = 'Nothing of historical interest happened on this day. Pick another day.';
+
+                histItem.appendChild(document.createTextNode(histFact));
+                histList.appendChild(histItem);
+            }
+
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);

@@ -1,18 +1,28 @@
-var startBtn = document.getElementById('generate1');
-
+var generateFactsBt = document.getElementById('generateFacts');
+var generateHistoricalBt = document.getElementById('generateHistorical');
 
 function getFacts() {
     // Facts api call
     var limit = document.getElementById('amountInput').value;
-
+    
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/facts?limit=' + limit,
         headers: { 'X-Api-Key': 'r0xgD0GtvJJrEoy6u9/jlg==nkpcvornpjuE0Na7'},
         contentType: 'application/json',
         success: function(result) {
-            var fact = result[0].fact;
-            document.getElementById('randomFact').innerHTML = fact;
+            console.log(limit);
+            document.getElementById('randomFact').innerHTML = '';
+
+            for(var i = 0; i < limit; i++) {
+                var factList = document.getElementById('randomFact');
+                var factItem = document.createElement('li');
+                var num = i+1;
+
+                var fact = num + ". " + result[i].fact;
+                factItem.appendChild(document.createTextNode(fact));
+                factList.appendChild(factItem);
+            }
 
         },
         error: function ajaxError(jqXHR) {
@@ -77,4 +87,5 @@ function getDadJokes() {
     });
 }
 
-startBtn.addEventListener('click', getFacts);
+generateFactsBt.addEventListener('click', getFacts);
+generateHistoricalBt.addEventListener('click', getHistFacts);

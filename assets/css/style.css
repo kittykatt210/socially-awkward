@@ -111,6 +111,10 @@
     margin-top: 4%;
    }
 
+   #randomFact, #historicalFact {
+    text-align: justify;
+   }
+
    @media screen and (max-width: 769px){
 
     #generateHistorical, #generateFacts {

@@ -120,3 +120,21 @@
       }
     
    } 
+
+
+   /* make mandatory changes to the jokes.HTML */
+
+   #generateRandomJokes, #generateDadjokes {
+
+    margin-top: 6%;
+
+   }
+
+   @media screen and (max-width: 769px){
+
+    #generateRandomJokes, #generateDadjokes {
+
+        margin-top: 10%;
+    
+       }
+   }

@@ -61,7 +61,9 @@ function displayRandomFactsFromLocalStorage() {
     RandomLocalStorage.forEach(function (factText) {
         var factItem = document.createElement('li');
         var factIcon = document.createElement("i")
-        factIcon.classList.add("fa", "fa-solid", "fa-gears");
+
+        factIcon.classList.add("fa", "fa-solid", "fa-gears", );
+
 
         var factTextNode = document.createTextNode(". " + factText);
 

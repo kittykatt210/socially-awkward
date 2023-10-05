@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socially Awkward Facts</title>
 
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma-tooltip/1.0.2/bulma-tooltip.css" 
+    integrity="sha512-6qf1uKd3wOSigUrq8+jq0q93zUQ6MObtTbhbP/Wkm+myG6K0D8DCx0mnJ6lNgRIgsI5lojlTah3njmyHpGx80Q==" 
+    crossorigin="anonymous"
+     referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
@@ -27,20 +30,21 @@
             <div id="holder" class="box is-90vw is-55vh has-text-centered has-background-grey-lighter ">
                 <div class="columns is-centered">
                     <div class="column">
-                        <h1 class="title my-6">Random Facts</h1>
+                        <h1 class="title my-6 has-tooltip-arrow " data-tooltip="click any descriptive icon to add to Favorites">Random Facts</h1>
                         <ul id="randomFact">
                         </ul>
-                        <input type="number" min= "0" max="5" step=""1 class="form-control mt-6" id="amountInput" placeholder="how many? "> 
-                        <button id="generateFacts" class="button is-primary ml-4">Generate</button>
+                        <input type="number" min= "0" max="5" step=""1 class="form-control mt-6 py-2" id="amountInput" placeholder="how many? "> 
+                        <button id="generateFacts" class="button is-primary ml-4 mt-6">Generate</button>
                     </div>
                     
                     <div class="column">
-                        <h2 class="title my-6">Historical Facts</h2>
+                        <h2 class="title my-6 has-tooltip-arrow" data-tooltip="click any descriptive icon to add to Favorites">Historical Facts</h2>
                         <ul id="historicalFact">
                         </ul>
-                        <input type="number" min="0" max="" step="1" class="form-control mt-6" id="amountInput2" placeholder="how many?">
-                        <input type="date" class="ml-4" id="date">
-                        <button id="generateHistorical" class="button is-primary ml-4">Generate</button>
+                        <input type="text" class="ml-4 py-2" id="date" placeholder="search a topic">
+                        <input type="number" min="0" max="" step="1" class="form-control mt-6 py-2" id="amountInput" placeholder="how many?">
+                        <button id="generateHistorical"   class="button is-primary ml-4 mt-6 " >Generate</button>
+                        
                     </div>
                 </div>
                 <div class="field is-grouped is-grouped-centered ">

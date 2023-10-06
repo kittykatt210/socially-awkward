@@ -1,7 +1,22 @@
+
+ .html {
+
+    background-image: radial-gradient(circle, #f3c340, #f1bf3d, #f0ba3a, #eeb638, #ecb235, #ebad31, #eaa92c,
+     #e9a428, #e99e21, #e8991a, #e89312, #e78d08); 
+
+ }
+ 
+ 
  /* this code provides styling for the header of the page */
 #amountInput::-webkit-inner-spin-button, 
 #amountInput::-webkit-outer-spin-button {
     height: 40px; /* You can adjust the height as needed */
+}
+
+.landing {
+
+    background-image: radial-gradient(circle, #f3c340, #f1bf3d, #f0ba3a, #eeb638, #ecb235, #ebad31, #eaa92c, #e9a428, #e99e21, #e8991a, #e89312, #e78d08); 
+
 }
  
  #header {
@@ -20,6 +35,15 @@
     margin-left: 2.5%;
     border-style: solid;
 
+}
+
+
+.random {
+
+    border-radius: 29px 29px 29px 29px;
+-webkit-border-radius: 29px 29px 29px 29px;
+-moz-border-radius: 29px 29px 29px 29px;
+border: 2px solid rgb(188, 188, 188);
 }
 
 /* applies space styling to the main containers */
@@ -95,9 +119,9 @@
     
     /* set up the facts layout ---------------------------------------------------------------------------------------------------------------------- */
 
-    .fa-gears:hover {
+    .fa-gears:active {
   
-        box-shadow: 0px 5px 20px black;
+        text-shadow: 0px 5px 20px black;
 
     }
 
@@ -105,18 +129,21 @@
 
     #holder {
 
-        box-shadow: 0px 20px 40px black;
-background-image: linear-gradient(to right, #d5d1d1, #dbd8d8, #e1dede, #e8e5e5, #eeecec, #eeecec, #eeecec, #eeecec, #e8e5e5, #e1dede, #dbd8d8, #d5d1d1);        
+        margin-top: 10%;
+        border-radius: 29px 29px 29px 29px;
+    -webkit-border-radius: 29px 29px 29px 29px;
+    -moz-border-radius: 29px 29px 29px 29px;
+    border: 11px double #727272a5;
+    box-shadow: 0px 20px 40px black;
+    background-image: linear-gradient(to right, #d5d1d1, #dbd8d8, #e1dede, #e8e5e5, #eeecec, #eeecec, #eeecec, #eeecec, #e8e5e5, #e1dede, #dbd8d8, #d5d1d1);        
 
     }
 
 
 
-    html {
-
-        background: rgb(255,164,38);
-background: linear-gradient(90deg, rgba(255,164,38,1) 0%, rgba(255,149,0,1) 19%, rgba(255,149,0,1) 90%, rgba(255,164,38,1) 100%);
-    }
+    body {
+        height: 110vh;
+        background-image: radial-gradient(circle, #f3c340, #f1bf3d, #f0ba3a, #eeb638, #ecb235, #ebad31, #eaa92c, #e9a428, #e99e21, #e8991a, #e89312, #e78d08); }
    
  
    
@@ -140,10 +167,19 @@ background: linear-gradient(90deg, rgba(255,164,38,1) 0%, rgba(255,149,0,1) 19%,
    }
 
 
+   .title {
+
+    text-shadow: -1px 3px 4px rgba(0,0,0,0.34);
+
+   }
+
    @media screen and (max-width: 769px){
 
 
-   
+   body {
+
+    height: 170vh;
+   }
 
       .control {
         display: flex;

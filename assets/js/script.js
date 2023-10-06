@@ -30,12 +30,7 @@ function getFacts() {
                 factItem.appendChild(factIcon);
                 factItem.appendChild(document.createTextNode(". "));
                 factItem.appendChild(factText);
-
-                var num = i+1;
-                var fact = num + ". " + result[i].fact;
-
                 console.log(limit);
-                factItem.appendChild(document.createTextNode(fact));
 
                 factList.appendChild(factItem);
 
@@ -61,9 +56,7 @@ function displayRandomFactsFromLocalStorage() {
     RandomLocalStorage.forEach(function (factText) {
         var factItem = document.createElement('li');
         var factIcon = document.createElement("i")
-
-        factIcon.classList.add("fa", "fa-solid", "fa-gears", );
-
+        factIcon.classList.add("fa", "fa-solid", "fa-gears", "is-clickable");
 
         var factTextNode = document.createTextNode(". " + factText);
 

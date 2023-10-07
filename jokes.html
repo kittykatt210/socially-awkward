@@ -28,13 +28,10 @@
                 <div class="columns is-centered">
                     <div class="column">
                         <h1 class="title my-6">Random Jokes</h1>
-                        <ul>
-                            <li class="my-3"><i class="fa-regular fa-face-grin-squint-tears"></i> random Joke 1</li>
-                            <li class="my-3"><i class="fa-regular fa-face-grin-squint-tears"></i> random Joke 2</li>
-                            <li class="my-3"><i class="fa-regular fa-face-grin-squint-tears"></i> random Joke 3</li>
+                        <ul id="randomJoke">
                         </ul>
 
-                        <input type="number" min= "0" max="5" step=""1 class="form-control mt-6" id="amountInput" placeholder="how many? "> 
+                        <input type="number" min= "0" max="5" step=""1 class="form-control mt-6" id="amountInput3" placeholder="how many? "> 
                         <button id="generateRandomJokes" class="button is-primary ml-4">Generate</button>
 
  
@@ -42,12 +39,9 @@
                     
                     <div class="column">
                         <h2 class="title my-6">Dad Jokes</h2>
-                        <ul>
-                            <li class="my-3"> <i class="fa-solid fa-masks-theater"></i> dad Joke 1</li>
-                            <li class="my-3"><i class="fa-solid fa-masks-theater"></i> dad Joke 2</li>
-                            <li class="my-3"><i class="fa-solid fa-masks-theater"></i> dad Joke 3</li>
+                        <ul id="dadJoke">
                         </ul>
-                        <input type="number" min="0" max="5" step="1" class="form-control mt-6" id="amountInput" placeholder="how many?">
+                        <input type="number" min="0" max="5" step="1" class="form-control mt-6" id="amountInput4" placeholder="how many?">
                         <button id="generateDadjokes" class="button is-primary ml-4">Generate</button>
                     </div>
                 </div>
@@ -63,5 +57,9 @@
     </section>
 
     <script src="./assets/js/script.js"></script>
+    <script> 
+        generateJokesBt.addEventListener('click', getJokes);
+        generateDadjokeBt.addEventListener('click', getDadJokes);
+    </script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 var generateFactsBt = document.getElementById('generateFacts');
 var generateHistoricalBt = document.getElementById('generateHistorical');
+var generateJokesBt = document.getElementById('generateRandomJokes');
+var generateDadjokeBt = document.getElementById('generateDadjokes');
 var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
+
 function SaveTolocalStorage () {
     localStorage.setItem("random-fact(s):", JSON.stringify(RandomLocalStorage));
 }
@@ -72,20 +75,14 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Page loaded.");
 });
 
-
-
-
 function getHistFacts() {
     // Historical facts api call
     var limit = document.getElementById('amountInput2').value;
-    var date = document.getElementById('date').value;
-    var year = parseInt(date);
-    var month = parseInt(date.split('-')[1]);
-    var day = parseInt(date.split('-')[2]);
+    var text = document.getElementById('topic').value;
 
     $.ajax({
         method: 'GET',
-        url: 'https://api.api-ninjas.com/v1/historicalevents?year=' + year + '&month=' + month + '&day=' + day,
+        url: 'https://api.api-ninjas.com/v1/historicalevents?text=' + text + '&offset=' + limit,
         headers: { 'X-Api-Key': 'r0xgD0GtvJJrEoy6u9/jlg==nkpcvornpjuE0Na7'},
         contentType: 'application/json',
         success: function(result) {
@@ -97,8 +94,9 @@ function getHistFacts() {
             for(var i = 0; i < limit; i++) {
                 var histList = document.getElementById('historicalFact');
                 var histItem = document.createElement('li');
-                var num = i+1;
-                var histFact = num + '. ' + result[0].event;
+                var date = result[i].year + '-' + result[i].month + '-' + result[i].day;
+                console.log(date);
+                var histFact = dayjs(date).format('D-MMM-YYYY') +': ' + result[i].event;
                 console.log(histFact);
 
                 histItem.appendChild(document.createTextNode(histFact));
@@ -106,7 +104,7 @@ function getHistFacts() {
             }} else {
                 var histList = document.getElementById('historicalFact');
                 var histItem = document.createElement('li');
-                histFact = 'Nothing of historical interest happened on this day. Pick another day.';
+                histFact = 'There are no historical facts associated with this topic. Pick another topic.';
 
                 histItem.appendChild(document.createTextNode(histFact));
                 histList.appendChild(histItem);
@@ -121,7 +119,8 @@ function getHistFacts() {
 
 function getJokes() {
     // Jokes api call
-    var limit = 3
+    var limit = document.getElementById('amountInput3').value;
+    console.log(limit);
 
     $.ajax({
         method: 'GET',
@@ -129,8 +128,31 @@ function getJokes() {
         headers: { 'X-Api-Key': 'DB4FieOP94WOQIx2LOBzoA==mCMWVRWRDZLdKPcD'},
         contentType: 'application/json',
         success: function(result) {
+            document.getElementById('randomJoke').innerHTML = '';
             console.log(result);
-        },
+
+            for(var i = 0; i < limit; i++) {
+                var jokeList = document.getElementById('randomJoke');
+                var jokeItem = document.createElement('li');
+
+                // var jokeIcon = document.createElement("i")
+                // jokeIcon.classList.add("fa", "fa-solid", "fa-gears");
+
+                var jokeText = document.createTextNode(result[i].joke);
+
+                // jokeItem.appendChild(jokeIcon);
+                // jokeItem.appendChild(document.createTextNode(". "));
+                jokeItem.appendChild(jokeText);
+                
+                jokeList.appendChild(jokeItem);
+
+                // factIcon.addEventListener("click", function () {
+                //     var index = Array.from(factList.children).indexOf(this.parentElement)
+                //    RandomLocalStorage.push(result[index].fact) 
+                //    SaveTolocalStorage ();
+
+        }
+    },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
@@ -139,7 +161,7 @@ function getJokes() {
 
 function getDadJokes() {
     // Dad jokes api call
-    var limit = 3
+    var limit = document.getElementById('amountInput4').value;
 
     $.ajax({
         method: 'GET',
@@ -147,7 +169,31 @@ function getDadJokes() {
         headers: { 'X-Api-Key': 'DB4FieOP94WOQIx2LOBzoA==mCMWVRWRDZLdKPcD'},
         contentType: 'application/json',
         success: function(result) {
+        document.getElementById('dadJoke').innerHTML = '';
         console.log(result);
+
+        for(var i = 0; i < limit; i++) {
+            var dadList = document.getElementById('dadJoke');
+            var dadItem = document.createElement('li');
+
+            // var jokeIcon = document.createElement("i")
+            // jokeIcon.classList.add("fa", "fa-solid", "fa-gears");
+
+            var dadText = document.createTextNode(result[i].joke);
+
+            // jokeItem.appendChild(jokeIcon);
+            // jokeItem.appendChild(document.createTextNode(". "));
+            dadItem.appendChild(dadText);
+            
+            dadList.appendChild(dadItem);
+
+            // factIcon.addEventListener("click", function () {
+            //     var index = Array.from(factList.children).indexOf(this.parentElement)
+            //    RandomLocalStorage.push(result[index].fact) 
+            //    SaveTolocalStorage ();
+
+    }
+
         },
         error: function ajaxError(jqXHR) {
         console.error('Error: ', jqXHR.responseText);
@@ -158,3 +204,6 @@ function getDadJokes() {
 
 generateFactsBt.addEventListener('click', getFacts);
 generateHistoricalBt.addEventListener('click', getHistFacts);
+
+
+

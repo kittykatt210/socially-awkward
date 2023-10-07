@@ -1,128 +1,75 @@
- /* this code provides styling for the header of the page */
+
+ .html {
+
+    background-image: radial-gradient(circle, #f3c340, #f1bf3d, #f0ba3a, #eeb638, #ecb235, #ebad31, #eaa92c,
+     #e9a428, #e99e21, #e8991a, #e89312, #e78d08); 
+
+ }
  
- #header {
-
- text-align: center;
- width: 90%;
- border-style: solid;
- margin-bottom: 2%;
- margin-left: 5%;
-
-}
-
-
-#main-header-container {
-    width: 95%;
-    margin-left: 2.5%;
-    border-style: solid;
-
-}
-
-/* applies space styling to the main containers */
-
-#bytopic {
-
-    
-    text-align: center;
-    width: 85%;
-    border-style: solid;
-    margin-top: 10%;
-    margin-bottom: 2%;
-    margin-left: 10%;
-
-}
-
-
-/* provides basic positioning and styling for the aside box */
-#aside {
-    display: flex;
-    width: 30%;
-    margin-left: 5%;
-    border-style: solid;
-}
-
-#content-container {
-
-    display: flex;
-
-}
-
-
-/* the following code allows the aside and the main containers to cover the entire screen width and behave properly with flexbox */
-#main-content {
-   display: flex;
-   flex-direction: column;
-   flex-grow: 3;
-    width: 150%;
-
-}
-
-.footer {
-
-    margin-top: 10%;
-    width: 95%;
-    margin-left: 2.5%;
-    border-style: solid;
-}
-
-/* finally decided to use a media query, tried multiple ways to make the adjustments but, in order to keep the previous work done, this was the best approach possible */
-
  
-    @media screen and (max-width: 769px) {
-        #content-container {
-            flex-wrap: wrap;
-        }
 
-        #aside {
+.landing {
 
-            padding: 2% 45%;
-        }
+    background-image: radial-gradient(circle, #f3c340, #f1bf3d, #f0ba3a, #eeb638, #ecb235, #ebad31, #eaa92c, #e9a428, #e99e21, #e8991a, #e89312, #e78d08); 
 
-        #bytopic {
+}
+ 
 
-            margin-left: 8%;
-        }
+.random {
 
-      .aside-fav-jokes, .aside-fav-facts {
+    border: 6px solid rgb(46, 45, 45);
+    border-radius: 29px 29px 29px 29px;
+    box-shadow: 0px 20px 30px black;
 
-        width: 10rem;
-      }
-    }
+}
+
+.fav {
+    border: 6px solid rgb(46, 45, 45);
+    border-radius: 29px 29px 29px 29px;
+    box-shadow: 0px 20px 30px black;
+
+}
+
+.jokes-div {
+
+    margin: 10% 0%;
+}
+
     
     /* set up the facts layout ---------------------------------------------------------------------------------------------------------------------- */
 
-    .fa-gears:hover {
+    .fa-gears:active {
   
-        box-shadow: 0px 5px 20px black;
+        text-shadow: 0px 5px 20px black;
 
     }
+
+
 
     #holder {
 
-        box-shadow: 0px 20px 40px black;
+        margin-top: 10%;
+        border-radius: 29px 29px 29px 29px;
+    -webkit-border-radius: 29px 29px 29px 29px;
+    -moz-border-radius: 29px 29px 29px 29px;
+    border: 11px double #727272a5;
+    box-shadow: 0px 20px 40px black;
+    background-image: linear-gradient(to right, #d5d1d1, #dbd8d8, #e1dede, #e8e5e5, #eeecec, #eeecec, #eeecec, #eeecec, #e8e5e5, #e1dede, #dbd8d8, #d5d1d1);        
+
     }
 
-    html {
 
-        background-color: #FFA526;
-    }
+
+    body {
+        height: 110vh;
+        background-image: radial-gradient(circle, #f3c340, #f1bf3d, #f0ba3a, #eeb638, #ecb235, #ebad31, #eaa92c, #e9a428, #e99e21, #e8991a, #e89312, #e78d08); }
    
-    #generatee {
-
-        display: none;
-    }
+ 
    
     .form-control {
 
     width: 100px ;
    }
-
-   #generateHistorical, #generateFacts {
-
-    margin-top: 6%;
-   }
-   
-
    .control {
 
     margin-top: 4%;
@@ -139,13 +86,19 @@
    }
 
 
+   .title {
+
+    text-shadow: -1px 3px 4px rgba(0,0,0,0.34);
+
+   }
+
    @media screen and (max-width: 769px){
 
-    #generateHistorical, #generateFacts {
 
-        margin-top: 8%;
-       }
-   
+   body {
+
+    height: 170vh;
+   }
 
       .control {
         display: flex;

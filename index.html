@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="landing">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,68 +20,194 @@
       crossorigin="anonymous"
     ></script>
 </head>
-<body id="mainbody">
+<body>
 
-    <!-- main page header -->
-   <div id="main-header-container" class="block has-background-grey-light mt-6">
-    <div id="header" class=" block has-background-grey-light p-6 has-text-black is-size-4 mt-4 	" >
-        <p> Welcome to our ice breaker!!!! <br>
-        Do you want to begin conversations but don't know how to ?
-     </p>
-      </div>
+
+  <section class="hero is-fullheight">
+    <div class="tabs is-medium navbar column ml-6 mt-5">
+      <ul>
+        <li><a><p><i class="fa-solid fa-house-fire"></i> Home</p></a></li>
+        <li><a><p><i class="fa-regular fa-star fa-shake"></i> Favorites</p></a></li>
+        <li><a><p> <i class="fa-brands fa-github"></i> Team</p></a></li>
+      </ul>
     </div>
-    
-<!-- Main page content, decided to divide it in 2 main child containers in order to reach desired layout -->
-    <main id="content-container" >
-
-        <!-- aside -->
-    <aside id= "aside" class="menu has-background-grey-light is-flex-direction-column is-justify-content-space-evenly is-align-items-center">
-
-      <div class="column aside-fav-facts">
-        <h2 class="title my-6">Fav Facts</h2>
-        <ul>
-            <li class="my-3 is-size-5"> <i class="fa-solid fa-gears"></i> dad Joke 1</li>
-            <li class="my-3 is-size-5" ><i class="fa-solid fa-gears"></i> dad Joke 2</li>
-            <li class="my-3 is-size-5"><i class="fa-solid fa-gears"></i> dad Joke 3</li>
-        </ul>
+    <div class="hero-body">
+      <div class="container">
+      <div class="columns is-vcentered mb-6 ">
+        <div class="column is-6 ">
+          <p class="title is-1 has-text-centered">
+            Welcome to our ice breaker!!!!
+          </p>
+          <p class="subtitle is-5 has-text-centered">
+          Do you want to start interactions but don't know how to ?
+          </p>
+          <p class="has-text-centered">
+            <a class="button is-medium is-info ">
+                Tell me more !
+            </a>
+        </p>
+        </div>
+        <div class="column is-5 is-offset-1 " >
+           <figure class="image is-4by3">
+            <img class="random" src="https://picsum.photos/800/600/?random" alt="Description">
+           </figure>
+       </div>
       </div>
+      </div>
+    </div>    
+  </section>
+  
+  <section class="hero is-fullheight jokes-div">
+    <div class="tabs is-large is-centered navbar column ml-6 mt-5">
+      <ul>
 
-        <div class="column aside-fav-jokes">
-          <h2 class="title my-6">Fav Jokes</h2>
+        <li><a><p><i class="fa-solid fa-gear fa-spin"></i> Facts</p></a></li>
+      </ul>
+    </div>
+    <div class="hero-body">
+      <div class="container">
+      <div class="columns is-vcentered mb-6">
+        <div class="column is-5 is-offset-1 " >
+           <figure class="image is-4by3">
+            <img class="random" src="https://picsum.photos/800/600/?random" alt="Description">
+           </figure>
+       </div>
+       <div class="column is-6 ">
+        <p class="title is-1 has-text-centered">
+          Hit Start to search for facts and historical events!! 
+        </p>
+        <p class="subtitle is-6 has-text-centered">
+        and become the smart guy in the room...
+        </p>
+        <p class="has-text-centered">
+          <a class="button is-medium is-info " onclick="location.href='facts.html';">
+              Start
+          </a>
+      </p>
+      </div>
+      </div>
+      </div>
+    </div>    
+  </section>
+
+  <section class="hero is-fullheight">
+    <div class="tabs is-large is-centered navbar column ml-6 mt-5">
+      <ul>
+
+        <li><a><p><i class="fa-regular fa-face-laugh-squint fa-bounce"></i> Jokes</p></a></li>
+      </ul>
+    </div>
+    <div class="hero-body jokes-div">
+      <div class="container">
+      <div class="columns is-vcentered mb-6">
+       <div class="column is-12 ">
+        <p class="title is-1 has-text-centered">
+          Feel Confident Enough And Want To Try Something Fun?
+        </p>
+        <p class="subtitle is-6 has-text-centered">
+        Click below to get some Jokes
+        </p>
+        <p class="has-text-centered">
+          <a class="button is-medium is-info " onclick="location.href='jokes.html';">
+              let's go!!
+          </a>
+      </p>
+      </div>
+      </div>
+      </div>
+    </div>    
+  </section>
+  <section class="hero is-fullheight">
+    <div class="tabs navbar is-centered is-large column is-offset- mt-5">
+      <ul>
+        <li><a><p> <i class="fa-regular fa-star fa-shake"></i> Favorites</p></a></li>
+      </ul>
+    </div>
+
+    <div class="hero-body jokes-div">
+      <div class="container">
+      <div class="columns is-vcentered fav-container">
+        <div class="column is-5 has-text-centered mb-6 fav py-6">
+          <p class="title is-1 has-text-centered">
+            Favorite Facts
+          </p>
           <ul>
-              <li class="my-3 is-size-5"> <i class="fa-regular fa-face-grin-squint-tears"></i> dad Joke 1</li>
-              <li class="my-3 is-size-5"><i class="fa-regular fa-face-grin-squint-tears"></i> dad Joke 2</li>
-              <li class="my-3 is-size-5"><i class="fa-regular fa-face-grin-squint-tears"></i> dad Joke 3</li>
-          </ul>
+            <li class="my-3 is-size-5 pb-4"> <i class="fa-solid fa-gears is-clickable	"></i> dad Joke 1</li>
+            <li class="my-3 is-size-5 pb-4" ><i class="fa-solid fa-gears is-clickable	"></i> dad Joke 2</li>
+            <li class="my-3 is-size-5 pb-4"><i class="fa-solid fa-gears is-clickable	"></i> dad Joke 3</li>
+        </ul>
+            <a class="button is-medium is-info ">
+                <p><i class="fa-solid fa-arrow-rotate-right"></i> Reset</p>
+            </a>
+        </p>
         </div>
-      </aside>
-<!-- main content, which has 2 child boxes, that are used for the main porpuse of the page -->
-     <div id="main-content" >
-    <div id="bytopic" class=" block has-background-grey-light pb-3 pt-6 has-text-black is-size-4 is-flex-direction-column " >
-         <p>Hit Start to search for facts and historical events</p> 
-        <button id="start" class="m-4 px-6 py-1 mt-4" onclick="location.href='facts.html';">start</button>
+        <div class="column mb-6 ">
+        </div>
+        <div class="column is-5 has-text-centered mb-6 fav py-6">
+          <p class="title is-1 has-text-centered">
+            Favorite Jokes
+          </p>
+          <ul>
+            <li class="my-3 is-size-5 pb-4"> <i class="fa-regular fa-face-grin-squint-tears"></i> dad Joke 1</li>
+            <li class="my-3 is-size-5 pb-4"><i class="fa-regular fa-face-grin-squint-tears"></i> dad Joke 2</li>
+            <li class="my-3 is-size-5 pb-4"><i class="fa-regular fa-face-grin-squint-tears"></i> dad Joke 3</li>
+        </ul>
+            <a class="button is-medium is-info ">
+                <p><i class="fa-solid fa-rotate-right fa-flip-horizontal"></i> Reset</p>
+            </a>
+        </p>
+        </div>
       </div>
+      </div>
+    </div>    
+  </section>
 
-      <div id="bytopic" class=" block has-background-grey-light pb-3 pt-6 has-text-black is-size-4 is-flex-direction-column " >
-        <p>Feel confident enough but want to try something fun?</p> 
-        <p>click here to get some Jokes </p>
-       <button onclick="location.href='jokes.html';" id="start-random" class="m-4 px-6 py-1 mt-4 is-size-6"> let's go !!</button>
-     </div>
+  <section class="hero is-fullheight">
+    <div class="tabs navbar is-centered is-large column is-offset- mt-5">
+      <ul>
+        <li><a><p> <i class="fa-brands fa-github fa-flip"></i> Team</p></a></li>
+      </ul>
     </div>
-    </main>
-<!-- footer -->
 
-     <footer class="footer has-background-grey-light has-text-black is-size-5 mb-3">
-        <div class="content has-text-centered is-flex is-flex-direction-row	is-justify-content-space-evenly">
-          <p>
-            <i class="fa-brands fa-github"></i> florezf90
+    <div class="hero-body">
+      <div class="container">
+      <div class="columns is-vcentered ">
+        <div class="column is-4 has-text-centered mb-6 fav-footer">
+          <p class="title is-1 has-text-centered">
+            Florezf90
           </p>
-          <p>
-            <i class="fa-brands fa-github"></i> kittykatt210
-          </p>
+            <a class="button is-medium is-info " onclick="location.href='https://github.com/florezf90';">
+                Github
+            </a>
+        </p>
         </div>
-      </footer>
-
-      <script src="./assets/js/script.js"></script>   
+        <div class="column is-4 has-text-centered my-6 fav-footer">
+          <p class="title is-1 has-text-centered">
+            Project Repo
+          </p>
+            <a class="button is-medium is-info " onclick="location.href='https://github.com/kittykatt210/socially-awkward';">
+                Github
+            </a>
+        </p>
+        </div>
+        <div class="column is-4 has-text-centered mb-6 fav-footer">
+          <p class="title is-1 has-text-centered" >
+            Kittykatt210
+          </p>
+          <p class="has-text-centered">
+            <a class="button is-medium is-info " onclick="location.href='https://github.com/kittykatt210';">
+                Github
+            </a>
+        </p>
+        </div>
+      </div>
+      </div>
+    </div>    
+  </section>
+  <script src="./assets/js/script.js"></script>   
 </body>
 </html>
+
+
+
+

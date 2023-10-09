@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socially Awkward Facts</title>
+    <title>Socially Awkward Jokes</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma-tooltip/1.0.2/bulma-tooltip.css" 
     integrity="sha512-6qf1uKd3wOSigUrq8+jq0q93zUQ6MObtTbhbP/Wkm+myG6K0D8DCx0mnJ6lNgRIgsI5lojlTah3njmyHpGx80Q==" 
@@ -24,41 +24,44 @@
       crossorigin="anonymous"
     ></script>
 </head>
-<body id="factsbody">
-    <section class="section">
-        <div class="container">
-            <div id="holder" class="box is-90vw is-55vh has-text-centered has-background-grey-lighter ">
-                <div class="columns is-centered">
-                    <div class="column">
-                        <h1 class="title my-6 has-tooltip-arrow " data-tooltip="click any descriptive icon to add to Favorites">Random Facts</h1>
-                        <ul id="randomFact">
-                        </ul>
-                        <input type="number" min= "0" max="5" step=""1 class="form-control mt-6 py-2" id="amountInput" placeholder="how many? "> 
-                        <button id="generateFacts" class="button is-success is-rounded ml-4 mt-6">Generate</button>
-                    </div>
-                    
-                    <div class="column">
-                        <h2 class="title my-6 has-tooltip-arrow" data-tooltip="click any descriptive icon to add to Favorites">Historical Facts</h2>
-                        <ul id="historicalFact">
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container "> 
+            <div class="columns">
+             <div class="column is-centered is-12  jokes-holder">
+                <div class="container">      
+                    <div class="column mt-5"></div>
+                 <div class="columns is-vcentered mt-6">
+                   <div class="list-right column has-text-centered is-5 mb-6 is-offset-1"><p class="title is-1 mb-6 has-tooltip-arrow" data-tooltip="click any descriptive icon to add to Favorites">Random Facts</p>
+                    <ul id="randomFact" >
+                      
+                    </ul>
+                    <input type="number" min= "0" max="5" step=""1 class="form-control mt-6 py-2" id="amountInput" placeholder="how many? "> 
+                    <button id="generateFacts" class="button is-success is-rounded ml-4 mt-6">Generate</button>
+                </div>
+                    <div class="list column has-text-centered is-5 mb-6"><p class="title is-1 mb-6 has-tooltip-arrow" data-tooltip="click any descriptive icon to add to Favorites">Historical Facts</p>
+                        <ul id="historicalFact" >
+                           
                         </ul>
                         <input type="text" class="ml-4 py-2" id="topic" placeholder="search a topic">
-                        <input type="number" min="0" max="" step="1" class="form-control mt-6 py-2" id="amountInput2" placeholder="how many?">
-                        <button id="generateHistorical"   class="button is-success is-rounded ml-4 mt-6 " >Generate</button>
-                        
+                        <input type="number" min= "0" max="5" step=""1 class="form-control mt-6 py-2" id="amountInput2" placeholder="how many? "> 
+                        <button id="generateHistorical" class="button is-success is-rounded ml-4 mt-6">Generate</button>
                     </div>
-                </div>
-                <div class="field is-grouped is-grouped-centered ">
+                 </div>
+                 <div class="field is-grouped is-grouped-centered ">
                     <p class="control">
-                        <button  id= "Go-home" class="button is-info is-rounded  mx-6 mt-6" onclick="location.href='index.html';">Go Home</button>
+                        <button  id= "Go-home" class="button is-info  mx-6 mt-6 mb-6" onclick="location.href='index.html';">Go Home</button>
                     </p>
                 </div>
-            </div>
-            <div id="final-buttons" class=" is-flex is-justify-content-space-evenly	">
-            </div>
+                </div>
+              </div>
+          </div>
         </div>
-    </section>
+        </div>
+      </section>
 
-    <script
+      <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
@@ -67,3 +70,4 @@
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
+

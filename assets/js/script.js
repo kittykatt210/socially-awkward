@@ -201,9 +201,11 @@ function getDadJokes() {
     });
 }
 
-
 generateFactsBt.addEventListener('click', getFacts);
 generateHistoricalBt.addEventListener('click', getHistFacts);
+
+// modal
+
 
 
 

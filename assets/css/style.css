@@ -11,6 +11,7 @@ html {
     height: 40px; /* You can adjust the height as needed */
 }
 
+
 .random {
 
     border: 6px solid rgb(46, 45, 45);
@@ -30,34 +31,42 @@ html {
 
     margin: 10% 0%;
 }
-
     
-    /* set up the facts layout ---------------------------------------------------------------------------------------------------------------------- */
-
     .fa-gears:active {
   
         text-shadow: 0px 5px 20px black;
 
     }
 
+.jokes-holder {
 
+    border: 8px solid rgb(46, 45, 45);
+    border-radius: 29px 29px 29px 29px;
+    box-shadow: 10px 20px 30px black;
+
+
+   } 
+
+  .list:hover, .list-right:hover {
+    
+    border-right: 8px solid rgb(46, 45, 45);;
+    border-left: 8px solid rgb(46, 45, 45);
+    border-radius: 29px 29px 29px 29px;
+
+}
 
     #holder {
 
         margin-top: 10%;
-        border: 8px solid rgb(46, 45, 45);
         border-radius: 29px 29px 29px 29px;
-        box-shadow: 10px 20px 30px black;
-    }
+    -webkit-border-radius: 29px 29px 29px 29px;
+    -moz-border-radius: 29px 29px 29px 29px;
+    border: 11px double #727272a5;
+    box-shadow: 0px 20px 40px black;
+    background-image: linear-gradient(to right, #d5d1d1, #dbd8d8, #e1dede, #e8e5e5, #eeecec, #eeecec, #eeecec, #eeecec, #e8e5e5, #e1dede, #dbd8d8, #d5d1d1);        
 
-    .list:hover {
-    
-        border-right: 8px solid rgb(46, 45, 45);;
-        border-left: 8px solid rgb(46, 45, 45);
-        border-radius: 29px 29px 29px 29px;
-    
     }
-
+   
     .form-control {
 
     width: 100px ;
@@ -67,46 +76,51 @@ html {
     margin-top: 4%;
    }
 
-   #randomFact, #historicalFact, #randomJoke, #dadJoke {
+   #randomFact, #historicalFact {
     text-align: justify;
    }
     
+   #randomFact li, #historicalFact li, #randomJoke li, #dadJoke li {
 
-   #randomFact li {
+    margin-top: 3rem;
+    text-align:center;
+    padding: 4%;
+   }
 
-    margin-top: 2rem;
+   #randomFact li:hover, #historicalFact li:hover, #randomJoke li:hover, #dadJoke li:hover {
+
+    margin-top: 3rem;
+    text-align:center;
+    font-size: larger;
+
    }
 
 
    .title {
 
-    text-shadow: -1px 3px 4px rgba(0,0,0,0.34);
+    text-shadow: -3px 4px 7px rgba(0,0,0,0.34);
 
    }
 
-   @media screen and (max-width: 769px){
-
-      .control {
-        display: flex;
-        flex-direction: column;
-      }
-    
-   } 
+#modal {
+   background-color: whitesmoke;
+    border-radius: 29px 29px 29px 29px;
 
 
-   /* make mandatory changes to the jokes.HTML */
+}
 
-   #generateRandomJokes, #generateDadjokes {
+.modal-title {
 
-    margin-top: 6%;
+    border-top: solid black 1px;
+    border-radius: 29px 29px 29px 29px;
 
-   }
 
-   @media screen and (max-width: 769px){
+}
 
-    #generateRandomJokes, #generateDadjokes {
+.modal-footer {
 
-        margin-top: 10%;
-    
-       }
-   }
+    border-bottom: solid black 1px;
+    border-radius: 29px 29px 29px 29px;
+
+
+}

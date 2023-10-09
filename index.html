@@ -24,8 +24,8 @@
 
 
   <section class="hero is-fullheight">
-    <div class="tabs is-medium navbar column ml-6 mt-5">
-      <ul>
+    <div  class="tabs navbar is-half columns ml-6 mt-5  " >
+      <ul id="nav">
         <li><a href="#facts"><p><i class="fa-solid fa-gear"></i> Facts</p></a></li>
         <li><a href="#Jokes"><p><i class="fa-regular fa-face-grin-squint-tears fa-bounce"></i> Jokes</p></a></li>
         <li><a href="#Favorites"><p><i class="fa-regular fa-star fa-shake"></i> Favorites</p></a></li>
@@ -119,7 +119,7 @@
     </div>    
   </section>
   <section class="hero is-fullheight">
-    <div class="tabs navbar is-centered is-large column is-offset- mt-5">
+    <div class="tabs navbar is-centered is-large columns is-offset- mt-5">
       <ul>
         <li><a id="Favorites"><p> <i class="fa-regular fa-star fa-shake"></i> Favorites</p></a></li>
       </ul>
@@ -209,18 +209,22 @@
   <!-- modal -->
   <div class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content has-background-grey-lighter py-5 px-5 is-size-4">
-      <p class="pb-4">Do you ever feel awkward at social gatherings or work functions where you don't really know anyone?</p>
-      <p class="pb-4">Do you struggle to come up with something to say to break the ice?</p>
-      <p class="pb-4">If so, then this site was made for you! Here you can find random facts and topics to start a conversation!</p>
-      <p class="pb-4">If you rather be the comedian at the party don't worry, we have you covered there too! You can also choose to get some random jokes to tell.</p>
-      <p class="has-text-centered is-italic pb-4">So what are you waiting for?</p>
+    <div id="modal" class="modal-content  py-5 px-5 is-size-4">
+      <button class="delete is-large" aria-label="close"></button>
+
+      <p class="title has-text-centered  pb-3">Hey buddy...</p>
+      <p class="pb-6 pt-5 modal-title">Do you ever feel awkward at social gatherings or work functions where you don't really know anyone?</p>
+      <p class="pb-6">Do you struggle to come up with something to say to break the ice?</p>
+      <p class="pb-6">If so, then this site was made for you! Here you can find random facts and topics to start a conversation!</p>
+      <p class="pb-6 modal-footer">If you rather be the comedian at the party don't worry, we have you covered there too! You can also choose to get some random jokes to tell.</p>
+      <p class="has-text-centered is-italic py-4 ">So what are you waiting for?</p>
       <p class="has-text-centered has-text-weight-bold">Click below to get started!!</p> 
     </div>
   </div>
   <script src="./assets/js/script.js"></script>
   <script>
     var tellMeMoreBt = document.querySelector('#more');
+    var closebtn = document.querySelector(".delete")
     var modalBg = document.querySelector('.modal-background');
     var modal = document.querySelector('.modal');
 
@@ -229,6 +233,10 @@
     });
 
     modalBg.addEventListener('click', () => {
+      modal.classList.remove('is-active');
+    });
+
+    closebtn.addEventListener('click', () => {
       modal.classList.remove('is-active');
     });
   </script>

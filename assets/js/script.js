@@ -89,7 +89,7 @@ function getFacts() {
                 var factItem = document.createElement('li');
 
                 var factIcon = document.createElement("i")
-                factIcon.classList.add("fa", "fa-solid", "fa-gears");
+                factIcon.classList.add("fa", "fa-solid", "fa-gears",  "is-clickable" );
 
                 var factText = document.createTextNode(result[i].fact);
 
@@ -135,7 +135,7 @@ function getHistFacts() {
                 var histFact = dayjs(date).format('D-MMM-YYYY') +': ' + result[i].event;
                 console.log(histFact);
                 var HistoricalIcon = document.createElement("i")
-                HistoricalIcon.classList.add("fa", "fa-solid", "fa-book-skull");
+                HistoricalIcon.classList.add("fa", "fa-solid", "fa-book-skull",  "is-clickable");
 
                 histItem.appendChild(HistoricalIcon);
                 histItem.appendChild(document.createTextNode(histFact));
@@ -181,7 +181,7 @@ function getJokes() {
                 var jokeList = document.getElementById('randomJoke');
                 var jokeItem = document.createElement('li');
                 var jokeIcon = document.createElement("i")
-                jokeIcon.classList.add("fa", "fa-solid", "fa-masks-theater");
+                jokeIcon.classList.add("fa", "fa-solid", "fa-masks-theater",  "is-clickable");
                 var jokeText = document.createTextNode(result[i].joke);
 
                 jokeList.appendChild(jokeItem)
@@ -223,7 +223,7 @@ function getDadJokes() {
             var dadItem = document.createElement('li');
 
             var dadIcon = document.createElement("i")
-            dadIcon.classList.add("fa", "fa-solid", "fa-face-grin-squint-tears");
+            dadIcon.classList.add("fa", "fa-solid", "fa-face-grin-squint-tears",  "is-clickable");
 
             var dadText = document.createTextNode(result[i].joke);
 

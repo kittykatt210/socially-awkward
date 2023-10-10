@@ -32,7 +32,7 @@ html {
     margin: 10% 0%;
 }
     
-    .fa-gears:active {
+    .fa-gears:active, .fa-book-skull:active, .fa-masks-theater:active, .fa-face-grin-squint-tears:active {
   
         text-shadow: 0px 5px 20px black;
 

@@ -85,12 +85,6 @@ html {
     margin-top: 3rem;
     text-align:center;
     padding: 4%;
-   }
-
-   #randomFact li:hover, #historicalFact li:hover, #randomJoke li:hover, #dadJoke li:hover {
-
-    margin-top: 3rem;
-    text-align:center;
     font-size: larger;
 
    }
@@ -123,4 +117,14 @@ html {
     border-radius: 29px 29px 29px 29px;
 
 
+}
+
+.fa-book-skull, .fa-masks-theater, .fa-face-grin-squint-tears {
+
+    padding-right: 3%;
+}
+
+#favortie-facts li, #favorite-jokes li {
+
+    margin: 10%;
 }

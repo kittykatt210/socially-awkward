@@ -1,12 +1,75 @@
 var generateFactsBt = document.getElementById('generateFacts');
 var generateHistoricalBt = document.getElementById('generateHistorical');
+var clearFactsButton = document.getElementById("clear-facts-facts");
+var clearJokesButton = document.getElementById("clear-jokes");
 var generateJokesBt = document.getElementById('generateRandomJokes');
 var generateDadjokeBt = document.getElementById('generateDadjokes');
-var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
+var RandomLocalStorage = JSON.parse(localStorage.getItem("favorite-fact(s):")) || [];
+var DadjokelocalStorage = JSON.parse(localStorage.getItem("favorite-joke(s):")) || [];
+
 
 function SaveTolocalStorage () {
-    localStorage.setItem("random-fact(s):", JSON.stringify(RandomLocalStorage));
+    localStorage.setItem("favorite-fact(s):", JSON.stringify(RandomLocalStorage));
+    localStorage.setItem("favorite-joke(s):", JSON.stringify(DadjokelocalStorage));
 }
+
+
+function displayRandomFactsFromLocalStorage() {
+    var factos = document.getElementById("favortie-facts");
+    var favjokes = document.getElementById("favorite-jokes") 
+
+
+
+    RandomLocalStorage.forEach(function (factText) {
+        var factItem = document.createElement('li');
+        var factIcon = document.createElement("i")
+        factIcon.classList.add("fa", "fa-solid", "fa-gears", "is-clickable");
+
+        var factTextNode = document.createTextNode(". " + factText);
+
+        factItem.appendChild(factIcon);
+        factItem.appendChild(factTextNode);
+        factos.appendChild(factItem);
+
+        clearFactsButton.addEventListener("click", function () {
+            RandomLocalStorage.length = 0;
+            SaveTolocalStorage ();
+            factos.removeChild(factItem);
+    
+        })
+    });
+
+
+    DadjokelocalStorage.forEach(function (jokeText) {
+        var jokeli = document.createElement('li');
+        var jokeIccon = document.createElement("i")
+        jokeIccon.classList.add("fa", "fa-solid", "fa-gears", "is-clickable");
+
+        var jokeTextNode = document.createTextNode(". " + jokeText);
+
+        jokeli.appendChild(jokeIccon);
+        jokeli.appendChild(jokeTextNode);
+        favjokes.appendChild(jokeli);
+
+
+        clearJokesButton.addEventListener("click", function () {
+            DadjokelocalStorage.length = 0;
+            SaveTolocalStorage ();
+            favjokes.removeChild(jokeli);
+    
+        })
+    });
+
+
+
+}
+
+// Call the function to display facts from local storage when needed
+document.addEventListener("DOMContentLoaded", function () {
+    displayRandomFactsFromLocalStorage();
+    console.log("Page loaded.");
+});
+
 
 function getFacts() {
     // Facts api call
@@ -50,31 +113,6 @@ function getFacts() {
     });
 }
 
-function displayRandomFactsFromLocalStorage() {
-    var factList = document.getElementById('randomFact');
-    factList.innerHTML = ''; // Clear any existing content
-
-    var RandomLocalStorage = JSON.parse(localStorage.getItem("random-fact(s):")) || [];
-
-    RandomLocalStorage.forEach(function (factText) {
-        var factItem = document.createElement('li');
-        var factIcon = document.createElement("i")
-        factIcon.classList.add("fa", "fa-solid", "fa-gears", "is-clickable");
-
-        var factTextNode = document.createTextNode(". " + factText);
-
-        factItem.appendChild(factIcon);
-        factItem.appendChild(factTextNode);
-        factList.appendChild(factItem);
-    });
-}
-
-// Call the function to display facts from local storage when needed
-document.addEventListener("DOMContentLoaded", function () {
-    displayRandomFactsFromLocalStorage();
-    console.log("Page loaded.");
-});
-
 function getHistFacts() {
     // Historical facts api call
     var limit = document.getElementById('amountInput2').value;
@@ -98,9 +136,18 @@ function getHistFacts() {
                 console.log(date);
                 var histFact = dayjs(date).format('D-MMM-YYYY') +': ' + result[i].event;
                 console.log(histFact);
+                var HistoricalIcon = document.createElement("i")
+                HistoricalIcon.classList.add("fa", "fa-solid", "fa-book-skull");
 
+                histItem.appendChild(HistoricalIcon);
                 histItem.appendChild(document.createTextNode(histFact));
                 histList.appendChild(histItem);
+
+                HistoricalIcon.addEventListener("click", function () {
+                    var histText = this.parentElement.textContent.trim();
+                    RandomLocalStorage.push(histText);
+                   SaveTolocalStorage ();
+                } )
             }} else {
                 var histList = document.getElementById('historicalFact');
                 var histItem = document.createElement('li');
@@ -116,6 +163,7 @@ function getHistFacts() {
         }
     });
 }
+
 
 function getJokes() {
     // Jokes api call
@@ -134,22 +182,20 @@ function getJokes() {
             for(var i = 0; i < limit; i++) {
                 var jokeList = document.getElementById('randomJoke');
                 var jokeItem = document.createElement('li');
-
-                // var jokeIcon = document.createElement("i")
-                // jokeIcon.classList.add("fa", "fa-solid", "fa-gears");
-
+                var jokeIcon = document.createElement("i")
+                jokeIcon.classList.add("fa", "fa-solid", "fa-masks-theater");
                 var jokeText = document.createTextNode(result[i].joke);
 
-                // jokeItem.appendChild(jokeIcon);
-                // jokeItem.appendChild(document.createTextNode(". "));
-                jokeItem.appendChild(jokeText);
-                
-                jokeList.appendChild(jokeItem);
+                jokeList.appendChild(jokeItem)
+                jokeItem.appendChild(jokeIcon)
+                jokeItem.appendChild(jokeText)
+           
+                jokeIcon.addEventListener("click", function () {
+                    var jokeTxt = this.parentElement.textContent.trim();
+                    DadjokelocalStorage.push(jokeTxt);
 
-                // factIcon.addEventListener("click", function () {
-                //     var index = Array.from(factList.children).indexOf(this.parentElement)
-                //    RandomLocalStorage.push(result[index].fact) 
-                //    SaveTolocalStorage ();
+                   SaveTolocalStorage ();
+                } )
 
         }
     },
@@ -158,6 +204,8 @@ function getJokes() {
         }
     });
 }
+
+
 
 function getDadJokes() {
     // Dad jokes api call
@@ -176,21 +224,21 @@ function getDadJokes() {
             var dadList = document.getElementById('dadJoke');
             var dadItem = document.createElement('li');
 
-            // var jokeIcon = document.createElement("i")
-            // jokeIcon.classList.add("fa", "fa-solid", "fa-gears");
+            var dadIcon = document.createElement("i")
+            dadIcon.classList.add("fa", "fa-solid", "fa-face-grin-squint-tears");
 
             var dadText = document.createTextNode(result[i].joke);
 
-            // jokeItem.appendChild(jokeIcon);
-            // jokeItem.appendChild(document.createTextNode(". "));
+            dadItem.appendChild(dadIcon);
             dadItem.appendChild(dadText);
-            
             dadList.appendChild(dadItem);
 
-            // factIcon.addEventListener("click", function () {
-            //     var index = Array.from(factList.children).indexOf(this.parentElement)
-            //    RandomLocalStorage.push(result[index].fact) 
-            //    SaveTolocalStorage ();
+            
+            dadIcon.addEventListener("click", function () {
+                var dadjokeTxt = this.parentElement.textContent.trim();
+                DadjokelocalStorage.push(dadjokeTxt);
+               SaveTolocalStorage ();
+            } )
 
     }
 
@@ -200,6 +248,9 @@ function getDadJokes() {
         }
     });
 }
+
+
+
 
 generateFactsBt.addEventListener('click', getFacts);
 generateHistoricalBt.addEventListener('click', getHistFacts);

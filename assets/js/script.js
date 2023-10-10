@@ -125,9 +125,7 @@ function getHistFacts() {
         contentType: 'application/json',
         success: function(result) {
             document.getElementById('historicalFact').innerHTML = '';
-            // console.log(limit);
             console.log(result);
-            // var histFact = result[0].event;
             if(result.length != 0) { 
             for(var i = 0; i < limit; i++) {
                 var histList = document.getElementById('historicalFact');
@@ -247,16 +245,47 @@ function getDadJokes() {
         console.error('Error: ', jqXHR.responseText);
         }
     });
-}
+};
 
+if (generateFactsBt) {
+    generateFactsBt.addEventListener('click', getFacts);
+};
 
+if (generateHistoricalBt) {
+    generateHistoricalBt.addEventListener('click', getHistFacts);
+};
 
+if (generateJokesBt) {
+    generateJokesBt.addEventListener('click', getJokes);
+};
 
-generateFactsBt.addEventListener('click', getFacts);
-generateHistoricalBt.addEventListener('click', getHistFacts);
+if (generateDadjokeBt) {
+    generateDadjokeBt.addEventListener('click', getDadJokes);
+};
 
 // modal
+var tellMeMoreBt = document.querySelector('#more');
+var closebtn = document.querySelector(".delete")
+var modalBg = document.querySelector('.modal-background');
+var modal = document.querySelector('.modal');
 
+if (tellMeMoreBt) {
+    tellMeMoreBt.addEventListener('click', () => {
+        modal.classList.add('is-active');
+    });
+};
+
+if (modalBg) {
+    modalBg.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+    });
+};
+
+if (closebtn) {
+    closebtn.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+    });
+};
 
 
 

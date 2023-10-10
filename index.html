@@ -50,7 +50,7 @@
         </div>
         <div class="column is-5 is-offset-1 " >
            <figure class="image is-4by3">
-            <img class="random" src="https://picsum.photos/800/600/?random" alt="Description">
+            <img class="random" src="https://picsum.photos/800/600/?random=1" alt="Description">
            </figure>
        </div>
       </div>
@@ -70,7 +70,7 @@
       <div class="columns is-vcentered mb-6">
         <div class="column is-5 is-offset-1 " >
            <figure class="image is-4by3">
-            <img class="random" src="https://picsum.photos/800/600/?random" alt="Description">
+            <img class="random" src="https://picsum.photos/800/600/?random=2" alt="Description">
            </figure>
        </div>
        <div class="column is-6 ">
@@ -217,24 +217,6 @@
     </div>
   </div>
   <script src="./assets/js/script.js"></script>
-  <script>
-    var tellMeMoreBt = document.querySelector('#more');
-    var closebtn = document.querySelector(".delete")
-    var modalBg = document.querySelector('.modal-background');
-    var modal = document.querySelector('.modal');
-
-    tellMeMoreBt.addEventListener('click', () => {
-        modal.classList.add('is-active');
-    });
-
-    modalBg.addEventListener('click', () => {
-      modal.classList.remove('is-active');
-    });
-
-    closebtn.addEventListener('click', () => {
-      modal.classList.remove('is-active');
-    });
-  </script>
 </body>
 </html>
 

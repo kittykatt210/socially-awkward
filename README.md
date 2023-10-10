@@ -20,8 +20,7 @@ https://kittykatt210.github.io/socially-awkward/
 
 This project allows a user to pick between getting facts (broken down by random and historical) or jokes (broken down by random or dad) to use as an icebreaker at any social gathering. The user also has the ability to save their favorite facts and jokes to use over and over again. The site should perform as rendered below:
 
-
-
+![](./assets/images/siteDemo.gif)
 ## Credits
 This project was a collaboration between Luis Florez and myself. Luis's work can be seen here:
 
